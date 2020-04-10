@@ -1,8 +1,17 @@
 body {
     font-family: 'Barlow Condensed', sans-serif;
-    /* background: rgb(143,0,255);
-background: linear-gradient(90deg, rgba(143,0,255,1) 0%, rgba(255,0,33,1) 100%);
-color:#fff !important; */
+    margin:0;
+}
+div#contentWrapper {
+    padding: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    max-width: 100%;
+}
+section#statement {
+    font-size: 50px;
+    text-align: left;
 }
 header {
     max-width: 100%;
@@ -22,14 +31,53 @@ header {
     height: 80vh;
 }
 section {
-    position: absolute;
+    /* position: absolute;
     top: 50%;
 left: 50%;
-transform: translate(-50%, -50%);
+transform: translate(-50%, -50%); */
 width: 100%;
 max-width: 1080px;
+    margin:auto;
+}
+.quiz {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 92vh;
+}
+section#lost-screen, section#winner-screen {
     text-align: center;
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 92vh;
+}
+div#explanation {
+    font-size: 19px;
+    max-width: 600px;
+    line-height: 1.5;
+    margin-bottom: 50px;
+}
+.questionText {
+    max-width: 670px;
+    text-align: center;
+}
+button#startQuiz, button#restartGame {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    padding: 11px 38px;
+    text-transform: uppercase;
+    border: 0;
+    background-color: #000;
+    color: #fff;
+    transition: background-color .3s;
+}
+button#startQuiz:hover, button#restartGame:hover {
+    background-color: #dfdfdf;
+    color: #000;
 }
 button#next {
     position: absolute;
@@ -47,8 +95,8 @@ button#next {
 }
 button#next:hover {
 
-    background-color: #9C27B0;
-    color: #fff;
+    background-color: #dfdfdf;
+    color: #000;
     
 }
 #quiz-question {
@@ -58,6 +106,10 @@ button#next:hover {
 }
 #quiz-choices {
     font-size: 18px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-align: center;
 }
 .choiceText {
     display: inline-block;
@@ -68,10 +120,17 @@ button#next:hover {
     transition: background-color .3s;
 }
 .choiceText:hover {
-    background-color: #ff5722;
-    border: 1px solid #ff5722;
-    color:#fff;
+    background-color: #dfdfdf;
+    border: 1px solid #dfdfdf;
+    color:#000;
 } 
+.graphic img {
+    max-width: 200px;
+    margin: 30px;
+}
+.item-header {
+    font-size: 50px;
+}
 .active{
     background-color: #ff5722;
     border: 1px solid #ff5722;

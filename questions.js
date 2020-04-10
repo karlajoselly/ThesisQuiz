@@ -7,7 +7,7 @@ let quiz = [
         question: 'It’s the night of your friend’s birthday dinner! You finished getting ready and are about to head out. What do you do to prepare?',
         choices: ['Walk to your bus/subway stop', 'Call ahead to confirm the restaurant is accessible.'],
         wrongAnswer: 'Walk to your bus/subway stop',
-        wrongAnswerExplanation: 'lorem Ipsum',
+        wrongAnswerExplanation: 'It is always best to call ahead to confirm if a place is accessible before arriving to the location to find out that it is not accessible.',
         background: 'images/bg.jpg'
     },
 
@@ -15,7 +15,7 @@ let quiz = [
         question: 'What spaces in the restaurant do you confirm are accessible when you call the restaurant? (Select all that apply)',
         choices: ['Bathroom', 'Back door/Emergency exit', 'Entrance/Front Door', 'The dining space'],
         wrongAnswer: 'none',
-        wrongAnswerExplanation: 'lorem Ipsum question 2',
+        wrongAnswerExplanation: 'Thinking of spaces, you want your friend to be able to enjoy her experience upon arriving to the destination. You need to check if she will be able to navigate the space and be able to access necessary spaces within in a business such as the bathroom and all entry points.',
         background: 'images/bg.jpg'
     },
     {
@@ -23,7 +23,7 @@ let quiz = [
         question: 'Once you arrive at the restaurant and walk through it, you realize space is not actually wheelchair accessible. This isn’t the first time a restaurant owner hasn’t realized their space isn’t fully ADA compliant… what do you do now? (Select all that apply)',
         choices: ['Look for a different bar that may be accessible', 'Leave a yelp review', 'Report the restaurant', 'Everyone was excited to try this restaurant, so you try to make it work'],
         wrongAnswer: 'Everyone was excited to try this restaurant, so you try to make it work',
-        wrongAnswerExplanation: 'lorem Ipsum',
+        wrongAnswerExplanation: 'Remember you are trying to make sure your best friend is having a good night, it is best to include her and ask what she thinks rather than trying to make things work.',
         background: 'images/bg.jpg'
 
     },
@@ -31,14 +31,14 @@ let quiz = [
         question: 'After a quick Yelp search, and a phone call to the bar, you found a different restaurant that is accessible for your friend nearby. This restaurant bar has a back patio where you all want to eat, hang out in but the entrance has a 3-step staircase to get inside. What do you do?',
         choices: ['Ask your friend if they want to go to the patio and if they are comfortable with you helping them down the stairs', 'Make an executive decision and only hang out in the dining space'],
         wrongAnswer: 'Make an executive decision and only hang out in the dining space',
-        wrongAnswerExplanation: 'lorem Ipsum',
+        wrongAnswerExplanation: 'You want to confirm friend first to see what she is comfortable with before making an executive decision',
         background: 'images/bg.jpg'
     },
     {
         question: 'You are ready to leave the restaurant, and your friend asks for help to find accessible transportation. What do you do? (Select all that apply)',
         choices: ['Call a regular Uber/Lyft', 'Check the MTA Info website for elevator service information', 'Use the Accessible Dispatch service (wheelchair accessible yellow and green taxi service)', 'Check different MTA train station routes to see what stations are accessible '],
         wrongAnswer: 'Call a regular Uber/Lyft',
-        wrongAnswerExplanation: 'lorem Ipsum',
+        wrongAnswerExplanation: 'Almost! When you call a regular Uber/Lyft it may not be accessible for your friend. You may want to go through all the other options first to see what would be the best option for her.',
         background: 'images/bg.jpg'
 
     }
@@ -74,7 +74,7 @@ let runQuiz = () => {
         (quizChoices).appendChild(choiceText);
 
         //Add background image 
-        contentWrapper.style.backgroundImage = `url('${currQuizQuestion.background}')`
+        // contentWrapper.style.backgroundImage = `url('${currQuizQuestion.background}')`
 
 
         if (currQuizQuestion.rightAnswer === i || currQuizQuestion.rightAnswer === 'all') {
@@ -146,7 +146,7 @@ let renderLoseScreen = (loseMessage) => {
             You Lost 
         </div>
         <div class="graphic">
-            <img src="#">
+            <img src="images/lost.png">
         </div>
         <div id="explanation"> 
             ${loseMessage}
@@ -156,7 +156,7 @@ let renderLoseScreen = (loseMessage) => {
     `
     //Clear the screen (clearScreen)
     clearScreen();
-
+    next.classList.add('hide');
     //Append to the screen the loseScreenHTML (via appendChild onto container)
     container.innerHTML = loseScreenHTML
 
@@ -177,10 +177,17 @@ let renderWinScreen = () => {
             You Made It!
         </div>
         <div class="graphic">
-            <img src="#">
+            <img src="images/smile.png">
         </div>
         <div id="explanation">
-            Add highlight line of the importance here.
+        When Congress passed The Americans with Disabilities Act (ADA) in 1990 it didn’t just help the 
+        58 million plus disabled Americans it helped us all and continues to help us all.
+        All of this has led to a better general understanding of how disability affects someone’s experience,
+        and what still needs to be done to create an inclusive environment for everyone. The purpose of the quiz is to start 
+        discussions about universal design and the importance of access for people in the disability community. 
+        This quiz portrays an interactive journey that simulates the stresses of someone not being able to perform 
+        a standard activity. As a community we should design with accessibility in mind to create equal opportunities 
+        and inclusive environments where everyone can benefit.
         </div>
 
     </section>
