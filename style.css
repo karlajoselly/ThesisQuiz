@@ -103,8 +103,8 @@ button#next {
 }
 button#next:hover {
 
-    background-color: #dfdfdf;
-    color: #000;
+    background-color: #d61882;
+    color: #fff;
     
 }
 #quiz-question, div#quiz-question.question1.question2.question3.question4.question5 {
