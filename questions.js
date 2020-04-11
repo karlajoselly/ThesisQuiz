@@ -9,7 +9,8 @@ let quiz = [
         wrongAnswer: 'Walk to your bus/subway stop',
         wrongAnswerExplanation: 'It is always best to call ahead to confirm if a place is accessible before arriving to the location to find out that it is not accessible.',
         background: 'images/birthday.jpg',
-        questionClassStyle: 'question1'
+        questionClassStyle: 'question1',
+        choiceClassStyle: 'choice1'
     },
 
     {
@@ -18,7 +19,8 @@ let quiz = [
         wrongAnswer: 'none',
         wrongAnswerExplanation: 'Thinking of spaces, you want your friend to be able to enjoy her experience upon arriving to the destination. You need to check if she will be able to navigate the space and be able to access necessary spaces within in a business such as the bathroom and all entry points.',
         background: 'images/talking.jpg',
-        questionClassStyle: 'question2'
+        questionClassStyle: 'question2',
+        choiceClassStyle: 'choice2'
     },
     {
 
@@ -27,7 +29,8 @@ let quiz = [
         wrongAnswer: 'Everyone was excited to try this restaurant, so you try to make it work',
         wrongAnswerExplanation: 'Remember you are trying to make sure your best friend is having a good night, it is best to include her and ask what she thinks rather than trying to make things work.',
         background: 'images/restaurant.jpg',
-        questionClassStyle: 'question3'
+        questionClassStyle: 'question3',
+        choiceClassStyle: 'choice3'
 
     },
     {
@@ -35,16 +38,18 @@ let quiz = [
         choices: ['Ask your friend if they want to go to the patio and if they are comfortable with you helping them down the stairs', 'Make an executive decision and only hang out in the dining space'],
         wrongAnswer: 'Make an executive decision and only hang out in the dining space',
         wrongAnswerExplanation: 'You want to confirm friend first to see what she is comfortable with before making an executive decision',
-        background: 'images/bg.jpg',
-        questionClassStyle: 'question4'
+        background: 'images/patio.jpg',
+        questionClassStyle: 'question4',
+        choiceClassStyle: 'choice4'
     },
     {
         question: 'You are ready to leave the restaurant, and your friend asks for help to find accessible transportation. What do you do? (Select all that apply)',
         choices: ['Call a regular Uber/Lyft', 'Check the MTA Info website for elevator service information', 'Use the Accessible Dispatch service (wheelchair accessible yellow and green taxi service)', 'Check different MTA train station routes to see what stations are accessible '],
         wrongAnswer: 'Call a regular Uber/Lyft',
         wrongAnswerExplanation: 'Almost! When you call a regular Uber/Lyft it may not be accessible for your friend. You may want to go through all the other options first to see what would be the best option for her.',
-        background: 'images/bg.jpg',
-        questionClassStyle: 'question5'
+        background: 'images/iphone.jpg',
+        questionClassStyle: 'question5',
+        choiceClassStyle: 'choice5'
 
     }
 ]
@@ -82,10 +87,14 @@ let runQuiz = () => {
 
         //Add background image 
         contentWrapper.style.backgroundImage = `url('${currQuizQuestion.background}')`
+        
         //Add animations to text
         quizQuestions.classList.add('animated', 'fadeInDown');
         quizChoices.classList.add('animated', 'fadeInDown');
         
+        //Add class style
+        quizQuestions.classList.add(currQuizQuestion.questionClassStyle);
+        choiceText.classList.add(currQuizQuestion.choiceClassStyle);
 
         if (currQuizQuestion.rightAnswer === i || currQuizQuestion.rightAnswer === 'all') {
             choiceText.setAttribute('data-right-answer', 'right');
@@ -116,6 +125,7 @@ next.addEventListener('click', (event) => {
     if (currQuizQuestion.wrongAnswer === 'none') {
         if (selectedAnswers.length === currQuizQuestion.choices.length) {
             nextQuestion();
+        
         } else {
             renderLoseScreen(currQuizQuestion.wrongAnswerExplanation)
         }
@@ -152,9 +162,9 @@ let nextQuestion = () => {
 
 let renderLoseScreen = (loseMessage) => {
     const loseScreenHTML = `
-    <section id="lost-screen">
+    <section id="lost-screen" class='animated fadeInDown'>
         <div class="item-header"> 
-            You Lost 
+            You Almost Made It! 
         </div>
         <div class="graphic">
             <img src="images/lost.png">
@@ -167,6 +177,8 @@ let renderLoseScreen = (loseMessage) => {
     `
     //Clear the screen (clearScreen)
     clearScreen();
+    contentWrapper.style.backgroundImage = `none`;
+    contentWrapper.style.backgroundColor = `#030B44`;
     next.classList.add('hide');
     //Append to the screen the loseScreenHTML (via appendChild onto container)
     container.innerHTML = loseScreenHTML
@@ -183,7 +195,7 @@ let renderLoseScreen = (loseMessage) => {
 
 let renderWinScreen = () => {
     const winScreenHTML = `
-    <section id= "winner-screen">
+    <section id= "winner-screen" class='animated fadeInDown'>
         <div class="item-header"> 
             You Made It!
         </div>
@@ -205,6 +217,8 @@ let renderWinScreen = () => {
     `
     //Clear the screen (clearScreen)
     clearScreen();
+    contentWrapper.style.backgroundImage = `none`;
+    contentWrapper.style.backgroundColor = `#FFBA00`;
     next.classList.add('hide');
     //Append to the screen the winScreenHTML (via appendChild onto container)
     container.innerHTML = winScreenHTML;
@@ -215,6 +229,7 @@ let renderWinScreen = () => {
 let clearScreen = () => {
     quizQuestions.innerHTML = '';
     quizChoices.innerHTML = '';
+
 }
 
 

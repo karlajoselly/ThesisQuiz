@@ -51,7 +51,7 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 92vh;
+    height: 82vh;
 }
 section#lost-screen, section#winner-screen {
     text-align: center;
@@ -62,6 +62,7 @@ section#lost-screen, section#winner-screen {
     height: 92vh;
 }
 div#explanation {
+    color:#fff;
     font-size: 19px;
     max-width: 600px;
     line-height: 1.5;
@@ -106,27 +107,56 @@ button#next:hover {
     color: #000;
     
 }
-#quiz-question {
+#quiz-question, div#quiz-question.question1.question2.question3.question4.question5 {
     display: block;
     font-size: 30px;
     margin-bottom: 30px;
+    color:#000;
 }
 #quiz-choices {
     font-size: 18px;
     align-items: center;
     justify-content: center;
     display: flex;
+    flex-wrap: wrap;
     text-align: center;
 }
+div#quiz-question.question1.question2.question3.question4 {
+    color: #fff;
+}
 .choiceText {
-    display: inline-block;
+    display: flex;
+    width: 40%;
+    height: 35%;
+    align-items: center;
+    justify-content: center;
     padding: 20px;
     border: 1px solid #000;
     background-color: transparent;
     border-radius: 50px;
-    margin: 20px;
+    margin: 9px;
     color: #000;
     transition: background-color .3s;
+}
+.choiceText.choice2 {
+    height: 20%;
+}
+
+.choiceText.choice3 {
+    width: 30%;
+    height: 20%;
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #fff;
+}
+.choiceText.choice4 {
+    color: #0b0342;
+    background-color: #fff;
+    border: 1px solid #fff;
+}
+.choiceText.choice5 {
+    height: 20%;
+    width: 30%;
 }
 .choiceText:hover {
     background-color: #de6ea8;
@@ -137,11 +167,13 @@ button#next:hover {
 .graphic img {
     max-width: 200px;
     margin: 30px;
+    filter:invert(1)
 }
 .item-header {
+    color:#fff;
     font-size: 50px;
 }
-.active{
+.active , .choiceText.choice4.active, .choiceText.choice3.active{
     background-color: #831d56;
     border: 1px solid #831d56;
     color: #fff;
