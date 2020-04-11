@@ -122,14 +122,17 @@ button#next:hover {
     display: inline-block;
     padding: 20px;
     border: 1px solid #000;
+    background-color: transparent;
     border-radius: 50px;
     margin: 20px;
+    color: #000;
     transition: background-color .3s;
 }
 .choiceText:hover {
-    background-color: #dfdfdf;
-    border: 1px solid #dfdfdf;
-    color:#000;
+    background-color: #de6ea8;
+    border: 1px solid #de6ea8;
+   
+    color: #fff;
 } 
 .graphic img {
     max-width: 200px;
@@ -139,9 +142,9 @@ button#next:hover {
     font-size: 50px;
 }
 .active{
-    background-color: #ff5722;
-    border: 1px solid #ff5722;
-    color:#fff;
+    background-color: #831d56;
+    border: 1px solid #831d56;
+    color: #fff;
 }
 .hide{
     display:none;

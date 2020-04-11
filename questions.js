@@ -8,7 +8,8 @@ let quiz = [
         choices: ['Walk to your bus/subway stop', 'Call ahead to confirm the restaurant is accessible.'],
         wrongAnswer: 'Walk to your bus/subway stop',
         wrongAnswerExplanation: 'It is always best to call ahead to confirm if a place is accessible before arriving to the location to find out that it is not accessible.',
-        background: 'images/bg.jpg'
+        background: 'images/birthday.jpg',
+        questionClassStyle: 'question1'
     },
 
     {
@@ -16,7 +17,8 @@ let quiz = [
         choices: ['Bathroom', 'Back door/Emergency exit', 'Entrance/Front Door', 'The dining space'],
         wrongAnswer: 'none',
         wrongAnswerExplanation: 'Thinking of spaces, you want your friend to be able to enjoy her experience upon arriving to the destination. You need to check if she will be able to navigate the space and be able to access necessary spaces within in a business such as the bathroom and all entry points.',
-        background: 'images/bg.jpg'
+        background: 'images/talking.jpg',
+        questionClassStyle: 'question2'
     },
     {
 
@@ -24,7 +26,8 @@ let quiz = [
         choices: ['Look for a different bar that may be accessible', 'Leave a yelp review', 'Report the restaurant', 'Everyone was excited to try this restaurant, so you try to make it work'],
         wrongAnswer: 'Everyone was excited to try this restaurant, so you try to make it work',
         wrongAnswerExplanation: 'Remember you are trying to make sure your best friend is having a good night, it is best to include her and ask what she thinks rather than trying to make things work.',
-        background: 'images/bg.jpg'
+        background: 'images/restaurant.jpg',
+        questionClassStyle: 'question3'
 
     },
     {
@@ -32,14 +35,16 @@ let quiz = [
         choices: ['Ask your friend if they want to go to the patio and if they are comfortable with you helping them down the stairs', 'Make an executive decision and only hang out in the dining space'],
         wrongAnswer: 'Make an executive decision and only hang out in the dining space',
         wrongAnswerExplanation: 'You want to confirm friend first to see what she is comfortable with before making an executive decision',
-        background: 'images/bg.jpg'
+        background: 'images/bg.jpg',
+        questionClassStyle: 'question4'
     },
     {
         question: 'You are ready to leave the restaurant, and your friend asks for help to find accessible transportation. What do you do? (Select all that apply)',
         choices: ['Call a regular Uber/Lyft', 'Check the MTA Info website for elevator service information', 'Use the Accessible Dispatch service (wheelchair accessible yellow and green taxi service)', 'Check different MTA train station routes to see what stations are accessible '],
         wrongAnswer: 'Call a regular Uber/Lyft',
         wrongAnswerExplanation: 'Almost! When you call a regular Uber/Lyft it may not be accessible for your friend. You may want to go through all the other options first to see what would be the best option for her.',
-        background: 'images/bg.jpg'
+        background: 'images/bg.jpg',
+        questionClassStyle: 'question5'
 
     }
 ]
@@ -77,10 +82,10 @@ let runQuiz = () => {
 
         //Add background image 
         contentWrapper.style.backgroundImage = `url('${currQuizQuestion.background}')`
-
+        //Add animations to text
         quizQuestions.classList.add('animated', 'fadeInDown');
         quizChoices.classList.add('animated', 'fadeInDown');
-
+        
 
         if (currQuizQuestion.rightAnswer === i || currQuizQuestion.rightAnswer === 'all') {
             choiceText.setAttribute('data-right-answer', 'right');
@@ -121,6 +126,7 @@ next.addEventListener('click', (event) => {
         } else {
             //clear the screen/divs 
             nextQuestion();
+            
             
         }
     }
