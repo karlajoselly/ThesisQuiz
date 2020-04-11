@@ -1,16 +1,22 @@
 body {
     font-family: 'Barlow Condensed', sans-serif;
     margin:0;
-}
+} 
+
 div#contentWrapper {
     padding: 0;
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0;
+    height: 100%;
     max-width: 100%;
 }
 section#statement {
     font-size: 50px;
+    background-color: rgba(63, 81, 181, 0.58);
+    padding: 30px;
+    border-radius: 29px;
+    color: #fff;
     text-align: left;
 }
 header {
@@ -23,6 +29,7 @@ header {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0px;
+    color: #fff;
 }
 .container {
     max-width: 100%;
@@ -33,10 +40,10 @@ header {
 section {
     /* position: absolute;
     top: 50%;
-left: 50%;
-transform: translate(-50%, -50%); */
-width: 100%;
-max-width: 1080px;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    width: 100%;
+    max-width: 1080px;
     margin:auto;
 }
 .quiz {
@@ -71,13 +78,13 @@ button#startQuiz, button#restartGame {
     padding: 11px 38px;
     text-transform: uppercase;
     border: 0;
-    background-color: #000;
+    background-color: #d61882;
     color: #fff;
     transition: background-color .3s;
 }
 button#startQuiz:hover, button#restartGame:hover {
     background-color: #dfdfdf;
-    color: #000;
+    color: #d61882;
 }
 button#next {
     position: absolute;

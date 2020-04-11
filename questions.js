@@ -67,6 +67,8 @@ let runQuiz = () => {
     questionOne.textContent = currQuizQuestion.question;
     (quizQuestions).appendChild(questionOne);
 
+    
+
     for (let i = 0; i < currQuizQuestion.choices.length; i++) {
         let choiceText = document.createElement('div');
         choiceText.className = 'choiceText';
@@ -74,7 +76,10 @@ let runQuiz = () => {
         (quizChoices).appendChild(choiceText);
 
         //Add background image 
-        // contentWrapper.style.backgroundImage = `url('${currQuizQuestion.background}')`
+        contentWrapper.style.backgroundImage = `url('${currQuizQuestion.background}')`
+
+        quizQuestions.classList.add('animated', 'fadeInDown');
+        quizChoices.classList.add('animated', 'fadeInDown');
 
 
         if (currQuizQuestion.rightAnswer === i || currQuizQuestion.rightAnswer === 'all') {
@@ -213,6 +218,7 @@ startQuiz.addEventListener('click', () => {
     nextButton.classList.remove('hide')
     runQuiz();
 })
+
 
 
 //checking correct choices
