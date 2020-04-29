@@ -37,6 +37,13 @@ header {
     position: relative;
     height: 80vh;
 }
+#videoBG {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
 section {
     /* position: absolute;
     top: 50%;
@@ -88,8 +95,11 @@ button#startQuiz:hover, button#restartGame:hover {
     color: #d61882;
 }
 button#next {
-    position: absolute;
-    bottom: 0;
+    /* position: absolute;
+    bottom: 0; */
+    /* display: block; */
+    margin-top:30px;
+    border-radius:31px;
     font-family: 'Barlow Condensed', sans-serif;
     right: 0;
     font-weight: 500;
@@ -159,8 +169,8 @@ div#quiz-question.question1.question2.question3.question4 {
     width: 30%;
 }
 .choiceText:hover {
-    background-color: #de6ea8;
-    border: 1px solid #de6ea8;
+    background-color: #d61882;
+    border: 1px solid #d61882;
    
     color: #fff;
 } 
