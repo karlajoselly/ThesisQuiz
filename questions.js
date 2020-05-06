@@ -16,7 +16,7 @@ let quiz = [
     questionClassStyle: "question1",
     choiceClassStyle: "choice1",
     transition: {
-      transitionImage: "image/phone.gif",
+      transitionImage: "q1Transition.gif",
       transitionHeader: "That's Right",
       transitionParagraph:
         "Nam pretium turpis et arcu. Suspendisse feugiat. Cras sagittis."
@@ -247,7 +247,7 @@ let renderTransitionScreen = () => {
   const transitionScreenHTML = `
     <section id= "transition-screen" class='animated fadeInDown'>
         <div class="transition-graphic">
-        ${currQuizQuestion.transition.transitionImage}
+        <img src="${currQuizQuestion.transition.transitionImage}"/>
         </div>
         <div class="transition-header"> 
         ${currQuizQuestion.transition.transitionHeader}

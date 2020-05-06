@@ -9,9 +9,9 @@
 
 <body>
     <div id="contentWrapper" style = 'background-image: url(images/Lanscape.jpg)' >
-            <header>
-                    <div class="main-header">Universal Access NY</div>
-                </header>
+        <header>
+            <div class="main-header"><a href="https://www.universalaccessny.com/" target="_blank">Universal Access NY</a></div>
+        </header>
         <section id="statement" class="animated fadeInDown">
             <p>It’s your best friend’s birthday! You planned a special night out for her with all your closest friends
                 at a new restaurant you haven’t been to. The restaurant has great reviews, and everyone is excited to
@@ -20,13 +20,18 @@
             <button id="startQuiz">Start the night</button>
         </section>
 
+        <section id="attempts" class="hide"></section>
         <div id="container" class='hide'>
-            <section class="quiz animated fadeInDown">
+            <section id="quiz" class="animated fadeInDown">
                 <div id="quiz-question">
                 </div>
 
                 <div id="quiz-choices">
                 </div>
+
+                <div id="hint"></div>
+            </section>
+            <section id="transition">
             </section>
         </div>
         <button id="next" class='hide transition'>Next</button>
@@ -34,7 +39,7 @@
     
 
   
-    <script src="questions.js"></script>
+    <script src="quiz-oop.js"></script>
 
 </body>
 
