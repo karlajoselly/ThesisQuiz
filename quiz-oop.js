@@ -8,7 +8,7 @@ const QuizQuestions = [
         "Call ahead to confirm the restaurant is accessible."
       ],
       correctAnswer: ["Call ahead to confirm the restaurant is accessible."],
-      hint: 'HINT: Before you go anywhere you want should you do?',
+      hint: 'HINT: Before you go anywhere, what should you do?',
       wrongAnswer: "Walk to your bus/subway stop",
       wrongAnswerExplanation:
         "It is always best to call ahead to confirm if a place is accessible before arriving to the location to find out that it is not accessible.",
@@ -20,7 +20,7 @@ const QuizQuestions = [
         transitionBackground: "#a3e1e0",
         transitionHeader: "That's Right!",
         transitionParagraph:
-          "Wheelchair users before they arrive to the venue need to call ahead to confirm if certain spaces are accessible to them. This is important because everyone's definition of accessibility is different."
+          "Before you arrive to the venue you should to call ahead to confirm if certain spaces are accessible for your friend. This is important because everyone's definition of accessibility is different."
       }
     },
   
@@ -39,7 +39,7 @@ const QuizQuestions = [
         "Entrance/Front Door",
         "The dining space"
       ],
-      hint: 'LoremIpsum',
+      hint: 'HINT: Think about the experience and places you need to access that needs to be accessible for your friend.',
       wrongAnswer: "none",
       wrongAnswerExplanation:
         "Thinking of spaces, you want your friend to be able to enjoy her experience upon arriving to the destination. You need to check if she will be able to navigate the space and be able to access necessary spaces within in a business such as the bathroom and all entry points.",
@@ -68,7 +68,7 @@ const QuizQuestions = [
         "Leave a yelp review",
         "Report the restaurant"
       ],
-      hint: 'LoremIpsum',
+      hint: 'HINT: Per ADA, places should be ADA compliant. It is also good for others to know if a place is accessible or not',
       wrongAnswer:
         "Everyone was excited to try this restaurant, so you try to make it work",
       wrongAnswerExplanation:
@@ -94,7 +94,7 @@ const QuizQuestions = [
       correctAnswer: [
         "Ask your friend if they want to go to the patio and if they are comfortable with you helping them down the stairs"
       ],
-      hint: 'LoremIpsum',
+      hint: 'HINT: Communication is key!',
       wrongAnswer:
         "Make an executive decision and only hang out in the dining space",
       wrongAnswerExplanation:
@@ -104,6 +104,7 @@ const QuizQuestions = [
       choiceClassStyle: "choice4",
       transition: {
         transitionImage: "images/q4Transition.gif",
+        transitionBackground: "#fedce2",
         transitionHeader: "Communication is Key!",
         transitionParagraph:
           "Being excluded from an event or decision because of what your friend perceives what you can or can’t do is almost always a microaggression. It’s always best to communicate with your friend on what she wants to or can do first before making an executive decision."
@@ -113,7 +114,7 @@ const QuizQuestions = [
       question:
         "You are ready to leave the restaurant, and your friend asks for help to find accessible transportation. What do you do? (Select all that apply)",
       choices: [
-        "Call a regular Uber/Lyft",
+        "Call a standard Uber/Lyft",
         "Check the MTA Info website for elevator service information",
         "Use the Accessible Dispatch service (wheelchair accessible yellow and green taxi service)",
         "Check different MTA train station routes to see what stations are accessible"
@@ -123,7 +124,7 @@ const QuizQuestions = [
         "Use the Accessible Dispatch service (wheelchair accessible yellow and green taxi service)",
         "Check different MTA train station routes to see what stations are accessible"
       ],
-      hint: 'LoremIpsum',
+      hint: 'HINT: Not all cars are accessible',
       wrongAnswer: "Call a regular Uber/Lyft",
       wrongAnswerExplanation:
         "Almost! When you call a regular Uber/Lyft it may not be accessible for your friend. You may want to go through all the other options first to see what would be the best option for her.",
@@ -228,6 +229,7 @@ class Quiz{
 
     renderHint(currQuestion){
         if (hint.innerText.length <= 0){
+            hint.classList.remove('hide')
             hint.innerText = currQuestion.hint
         }
     }
@@ -275,6 +277,7 @@ class Quiz{
         quiz.classList.remove('hide')
         transition.innerHTML = ''
         hint.innerText = ''
+        hint.classList.add('hide')
         attempts.classList.remove('hide')
         this.selectedAnswers = [];
         this.runQuiz();
@@ -296,21 +299,25 @@ class Quiz{
     renderWinScreen(){
         const winScreenHTML = `
         <section id= "winner-screen" class='animated fadeInDown'>
-            <div class="item-header"> 
-                You Made It!
-            </div>
+        <div class="flex-container">
             <div class="graphic">
                 <img src="images/smile.png">
+            </div>
+            <div class="win-content">
+            <div class="item-header"> 
+                You Made It!
             </div>
             <div id="explanation">
             When Congress passed The Americans with Disabilities Act (ADA) in 1990 it didn’t just help the 
             58 million plus disabled Americans it helped us all and continues to help us all.
             All of this has led to a better general understanding of how disability affects someone’s experience,
-            and what still needs to be done to create an inclusive environment for everyone. The purpose of the quiz is to start 
+            and what still needs to be done to create an inclusive environment for everyone. <br/> <br/> The purpose of the quiz is to start 
             discussions about universal design and the importance of access for people in the disability community. 
             This quiz portrays an interactive journey that simulates the stresses of someone not being able to perform 
             a standard activity. As a community we should design with accessibility in mind to create equal opportunities 
             and inclusive environments where everyone can benefit.
+            </div>
+            </div>
             </div>
         </section>
         `;
@@ -328,16 +335,21 @@ class Quiz{
     renderLoseScreen(currQuestion){
         const loseScreenHTML = `
             <section id="lost-screen" class='animated fadeInDown'>
+            <div class="flex-container">
+            <div class="graphic">
+                    <img src="images/lost.png">
+                </div>
+                <div class="lose-content">
                 <div class="item-header"> 
                     You Almost Made It! 
                 </div>
-                <div class="graphic">
-                    <img src="images/lost.png">
-                </div>
+                
                 <div id="explanation"> 
                     ${currQuestion.wrongAnswerExplanation}
                 </div>
                 <button id="restartGame">Restart Game</button> 
+                </div>
+                </div>
             </section>
             `;
         this.clearScreen();
