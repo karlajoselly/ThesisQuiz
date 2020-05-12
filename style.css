@@ -8,13 +8,14 @@ div#contentWrapper {
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0;
-    height: 100%;
+    min-height: 100%;
     max-width: 100%;
 }
 section#statement {
     font-size: 50px;
     background-color: rgba(4, 38, 161, 0.86);
     padding: 30px;
+    width: 80vw;
     border-radius: 29px;
     color: #fff;
     text-align: left;
@@ -327,4 +328,196 @@ section#attempts img {
 section#attempts img:last-of-type {
     
     margin-right: 0;
+}
+
+
+
+@media all and (max-width:770px) {
+    section#statement {
+        margin-top: 5vh;
+    }  
+    section#transition-screen {
+       
+        flex-direction: column;
+    }  
+    .transition-graphic {
+        align-self: center;
+        margin-bottom: 50px;
+    } 
+    .transition-content {
+        align-self: center;
+        padding-left: 0;
+        margin-bottom: 50px;
+    } 
+    .flex-container {
+        flex-direction: column;
+    } 
+    .win-content, .lose-content {
+        
+        align-self: center;
+    }
+    .graphic {
+        
+        margin-right: 0;
+        margin-bottom: 50px;
+    }
+}
+@media all and (max-width:812px) {
+    #quiz {
+        height: 125vh;
+        padding-top: 35px;
+        justify-content: flex-start;
+    }
+    button#next {
+        bottom: -192px;
+    }
+    .choiceText.choice2.active {
+        background-color: #831d56 !important;
+        border: 2px solid #831d56 !important;
+        color: #fff !important;
+    }
+.choiceText:hover {
+    background-color: transparent;
+    border: 1px solid #000;
+    color: #000;
+}
+.choiceText.choice3:hover {
+    background-color: #fff;
+    border: 1px solid #fff;
+    color: #000;
+}
+.choiceText.choice4:hover {
+    background-color: #fff;
+    border: 2px solid #000;
+    color: #000;
+}
+.active, .choiceText.choice4.active, .choiceText.choice3.active {
+    background-color: #831d56 !important;
+    border: 1px solid #831d56 !important;
+    color: #fff !important;
+}
+.choiceText.choice4.active{
+    background-color: #831d56 !important;
+    border: 2px solid #831d56 !important;
+    color: #fff !important;
+}
+.choiceText.choice2 {
+    height: 13%;
+    margin-bottom: 0;
+    width: 40%;
+}
+.flex-container {
+ 
+    height: auto;
+}
+section#lost-screen, section#winner-screen {
+    height: auto;
+    padding-bottom: 50px;
+}
+}
+@media all and (max-width:420px) {
+section#statement {
+    font-size: 28px;
+    
+    width: 75vw;
+}
+#quiz-question, div#quiz-question.question1.question2.question3.question4.question5 {
+    display: block;
+    padding: 0 20px;
+    font-size: 25px;
+}
+.choiceText {
+    display: flex;
+    width: 70%;
+    height: 18%;
+}
+button#next {
+    bottom: 0;
+    margin: 0 auto;
+}
+.transition-content > div {
+    flex-basis: 100%;
+    padding: 0 20px;
+}
+
+button#continue {
+    margin: 0 20px;
+}
+.choiceText.choice1 {
+    height: auto;
+}
+div#hint {
+    margin: 20px;
+}
+div#transition-explanation {
+    font-size: 24px;
+}
+.choiceText.choice3 {
+    width: 100%;
+    height: auto;
+}
+.choiceText.choice4 {
+    color: #000;
+    background-color: #fff;
+    border: 2px solid #000;
+    height: 10%;
+    margin-bottom: 2px;
+    margin-top: 0;
+}
+.flex-container {
+ 
+    height: auto;
+}
+div#explanation {
+    color: #fff;
+    font-size: 24px;
+}
+.choiceText.choice2 {
+    height: 6%;
+    width: 75%;
+    margin: 0;
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #000;
+}
+.choiceText {
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #000;
+}
+.active, .choiceText.choice4.active, .choiceText.choice3.active {
+    background-color: #831d56 !important;
+    border: 2px solid #831d56 !important;
+    color: #fff !important;
+}
+.choiceText:hover {
+    background-color: #fff;
+    border: 2px solid #000;
+    color: #000;
+}
+div#container {
+    position: relative;
+}
+.choiceText.choice3 {
+    width: 84%;
+    height: 14%;
+    margin-top: 0;
+}
+section#lost-screen, section#winner-screen {
+    height: auto;
+    padding: 0 20px;
+    width: auto;
+    max-width: 1500px;
+}
+.graphic {
+    margin-right: 0;
+    width: 40%;
+    margin-bottom: 50px;
+}
+#quiz {
+    height: 90vh;
+    padding-top: 10vh;
+    justify-content: flex-start;
+}
+
 }
