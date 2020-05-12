@@ -125,7 +125,7 @@ const QuizQuestions = [
         "Check different MTA train station routes to see what stations are accessible"
       ],
       hint: 'HINT: Not all cars are accessible',
-      wrongAnswer: "Call a regular Uber/Lyft",
+      wrongAnswer: "Call a standard Uber/Lyft",
       wrongAnswerExplanation:
         "Almost! When you call a regular Uber/Lyft it may not be accessible for your friend. You may want to go through all the other options first to see what would be the best option for her.",
       background: "images/iphone.jpg",
