@@ -361,6 +361,14 @@ section#attempts img:last-of-type {
         margin-right: 0;
         margin-bottom: 50px;
     }
+    #quiz {
+        height: 64vh;
+        padding-top: 35px;
+        justify-content: center;
+    }
+    button#next {
+        bottom: 0;
+    }
 }
 @media all and (max-width:812px) {
     #quiz {
@@ -465,7 +473,7 @@ div#transition-explanation {
     color: #000;
     background-color: #fff;
     border: 2px solid #000;
-    height: 5%;
+    height: 5% !important;
     margin-bottom: 2px;
     
 }
