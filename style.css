@@ -223,10 +223,9 @@ div#quiz-question.question1.question2.question3.question4 {
    
     color: #fff;
 } 
-.choiceText.choice2:hover, choiceText.choice4:hover {
+.choiceText.choice2:hover, .choiceText.choice4:hover {
     background-color: #d61882;
     border: 2px solid #d61882;
-   
     color: #fff;
 } 
 .graphic {
@@ -248,13 +247,12 @@ div#quiz-question.question1.question2.question3.question4 {
     margin-bottom: 20px;
 }
 .active , 
-.choiceText.choice4.active, 
 .choiceText.choice3.active{
     background-color: #831d56;
     border: 1px solid #831d56;
     color: #fff;
 }
-.choiceText.choice2.active {
+.choiceText.choice2.active, .choiceText.choice4.active {
     background-color: #831d56;
     border: 2px solid #831d56;
     color: #fff; 
