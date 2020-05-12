@@ -431,8 +431,13 @@ section#statement {
     width: 70%;
     height: 18%;
 }
+.choiceText.choice0 {
+    display: flex;
+    width: 70%;
+    height: 4%;
+}
 button#next {
-    bottom: 0;
+    bottom: -60px;
     margin: 0 auto;
 }
 .transition-content > div {
