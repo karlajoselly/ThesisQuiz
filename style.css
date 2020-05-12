@@ -437,8 +437,8 @@ section#statement {
     height: 4%;
 }
 button#next {
-    bottom: -112px;
-    margin: 0 auto;
+    bottom: -112px !important;
+   
 }
 .transition-content > div {
     flex-basis: 100%;
@@ -465,9 +465,9 @@ div#transition-explanation {
     color: #000;
     background-color: #fff;
     border: 2px solid #000;
-    height: 10%;
+    height: 5%;
     margin-bottom: 2px;
-    margin-top: 0;
+    
 }
 .flex-container {
  
@@ -506,7 +506,7 @@ div#container {
 }
 .choiceText.choice3 {
     width: 84%;
-    height: 14%;
+    height: 5%;
     margin-top: 0;
 }
 section#lost-screen, section#winner-screen {
